@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura del Ticket de Avión</title>
+    <link rel="stylesheet" href="../css/compra.css">
+</head>
+<body>
+    <header class="ticket">
+        <h1>Factura del Ticket de Avión</h1>
+    </header>
+
+    <main>
+        <div class="factura">
+            <h2>Detalles del Ticket</h2>
+            <p><strong>Nombre Completo:</strong> <span id="nombre"></span></p>
+            <p><strong>Cedula:</strong> <span id="cedula"></span></p>
+            <p><strong>Fecha de Nacimiento:</strong> <span id="fecha-nacimiento"></span></p>
+            <p><strong>Ciudad de Origen:</strong> <span id="origen"></span></p>
+            <p><strong>Ciudad de Destino:</strong> <span id="destino"></span></p>
+            <p><strong>Fecha de Viaje:</strong> <span id="fecha"></span></p>
+            <p><strong>Cantidad de Pasajeros:</strong> <span id="pasajeros"></span></p>
+        </div>
+        <button onclick="window.print();" class="btn">Imprimir Factura</button>
+        <button type="button" onclick="window.location.href='index.html';" class="btn">Volver al Inicio</button>
+    </main>
+
+    <footer style="background-color: #fff; color: #fff; padding: 20px; text-align: center;">
+        <div class="footer">
+          <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
+          <p>
+            <a href="https://www.facebook.com" target="_blank" style="color: #333; text-decoration: none; margin: 0 10px;">Facebook</a> |
+            <a href="https://www.twitter.com" target="_blank" style="color: #333; text-decoration: none; margin: 0 10px;">Twitter</a> |
+            <a href="https://www.instagram.com" target="_blank" style="color: #333; text-decoration: none; margin: 0 10px;">Instagram</a>
+          </p>
+        </div>
+      </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const nombre = params.get('nombre');
+        const fechaNacimiento = params.get('fecha-nacimiento');
+        const origen = params.get('origen');
+        const destino = params.get('destino');
+        const fecha = params.get('fecha');
+        const pasajeros = params.get('pasajeros');
+        document.getElementById('fecha-nacimiento').textContent = fechaNacimiento;
+        document.getElementById('nombre').textContent = nombre;
+        document.getElementById('origen').textContent = origen;
+        document.getElementById('destino').textContent = destino;
+        document.getElementById('fecha').textContent = fecha;
+        document.getElementById('pasajeros').textContent = pasajeros;
+    </script>
+</body>
+</html>
